@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.universe.universe.dao.PersonDao">
+
+    <insert id="save" parameterType="com.universe.universe.domain.Person" useGeneratedKeys="true" keyProperty="person.id">
+        INSERT INTO person(
+        `name`,
+        age
+        ) VALUE (
+        #{person.name},
+        #{person.age}
+        )
+    </insert>
+
+    <select id="findAll" resultType="com.universe.universe.domain.Person">
+        SELECT * FROM person
+    </select>
+</mapper>
